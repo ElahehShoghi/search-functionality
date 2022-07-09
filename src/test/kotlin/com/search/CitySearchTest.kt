@@ -15,6 +15,10 @@ class CitySearchTest {
                 Arguments.of("Va", listOf("Valencia", "Vancouver")),
                 Arguments.of("vA", listOf("Valencia", "Vancouver")),
                 Arguments.of("APE", listOf("Budapest")),
+                Arguments.of("*",
+                        listOf("Paris", "Budapest", "Skopje", "Rotterdam", "Valencia",
+                                "Vancouver", "Amsterdam", "Vienna", "Sydney", "New York City",
+                                "London", "Bangkok", "Hong Kong", "Dubai", "Rome", "Istanbul")),
         )
     }
 
