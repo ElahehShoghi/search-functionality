@@ -1,7 +1,7 @@
 package com.search
 
 class CitySearch {
-    val cities = listOf("Paris", "Budapest", "Skopje", "Rotterdam", "Valencia", "Vancouver", "Amsterdam", "Vienna",
+    private val cities = listOf("Paris", "Budapest", "Skopje", "Rotterdam", "Valencia", "Vancouver", "Amsterdam", "Vienna",
             "Sydney", "New York City", "London", "Bangkok", "Hong Kong", "Dubai", "Rome", "Istanbul")
 
     fun search(searchText: String): List<String> {
