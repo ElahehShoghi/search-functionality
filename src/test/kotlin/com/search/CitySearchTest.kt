@@ -13,6 +13,7 @@ class CitySearchTest {
         fun searchTextArguments() = listOf(
                 Arguments.of("l", listOf<String>()),
                 Arguments.of("Va", listOf("Valencia", "Vancouver")),
+                Arguments.of("vA", listOf("Valencia", "Vancouver")),
         )
     }
 
