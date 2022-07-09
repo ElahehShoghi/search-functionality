@@ -1,18 +1,24 @@
 package com.search
 
-import org.junit.Test
+import org.junit.jupiter.params.ParameterizedTest
+import org.junit.jupiter.params.provider.Arguments
+import org.junit.jupiter.params.provider.MethodSource
 import kotlin.test.assertEquals
 
 class CitySearchTest {
     private val citySearch = CitySearch()
 
-    @Test
-    fun `should return no results for search text is fewer than 2 characters`() {
-        assertEquals(citySearch.search("l"), listOf())
+    companion object {
+        @JvmStatic
+        fun searchTextArguments() = listOf(
+                Arguments.of("l", listOf<String>()),
+                Arguments.of("Va", listOf("Valencia", "Vancouver")),
+        )
     }
 
-    @Test
-    fun `should return city names starting with the search text which are more than 1 character`() {
-        assertEquals(listOf("Valencia", "Vancouver"), citySearch.search("Va"))
+    @ParameterizedTest
+    @MethodSource("searchTextArguments")
+    fun `should return cities for search text`(searchText: String, cities: List<String>) {
+        assertEquals(cities, citySearch.search(searchText))
     }
 }
